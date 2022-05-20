@@ -1,6 +1,6 @@
 import React from "react";
 import appStyles from "./app.module.css";
-import { ReactComponent as AsteriskImage } from "../../images/asterisk.svg";
+import { ReactComponent as AsteriskImage } from "../images/asterisk.svg";
 
 import Form from "../form/form";
 
