@@ -14,7 +14,13 @@ class Form extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-  }
+
+      this.setState({
+        ...this.state,
+        isSubmit: true,
+        value: this.emailInput.current.value
+      });
+    } 
 
   render() {
     return (
@@ -29,7 +35,15 @@ class Form extends React.Component {
             Подписаться
           </button>
         </form>
-        <p className={formStyles.message}></p>
+        <p className={formStyles.message}>
+  {
+    this.state.isSubmit && this.state.value &&
+    <>
+      <span>На почту {this.state.value} успешно подписана рассылка</span>
+      <span>Но это не точно</span>
+    </>
+  }
+</p>
       </div>
     );
   }
